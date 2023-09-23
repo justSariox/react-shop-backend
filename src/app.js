@@ -11,6 +11,10 @@ mongoose.connect('mongodb+srv://sarioxss:awRXAsfvVzk5fw2E@cluster0.xcxxeyl.mongo
     .catch(err => console.log('DB error: ' + err.message))
 const app = express();
 
+app.get('/', (req, res) => {
+    res.json({"success": true})
+})
+
 const storage = multer.diskStorage({
     destination: (_, __, cb) => {
         cb(null, 'uploads')
